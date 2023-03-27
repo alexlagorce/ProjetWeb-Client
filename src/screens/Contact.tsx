@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form"
+import { Link } from 'react-router-dom';
 
 type FormInputs = {
     subject: string,
@@ -8,9 +9,26 @@ type FormInputs = {
 
 export const Contact = () => {
 
-    const onSubmit: SubmitHandler<FormInputs> = data=>  {
-        console.log(data)
-    }
+    const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+
+      try {
+        const response = await fetch('http://localhost:3000/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+        if (response.ok) {
+          console.log('Message envoyé !');
+        } else {
+          console.log('Erreur lors de l\'envoi du message');
+        }
+      } catch (error) {
+        console.log(error);
+      }
+
+    };
 
     const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>()
     return (
@@ -37,7 +55,11 @@ export const Contact = () => {
                 <textarea {...register("message")} rows={5} className="border resize-none" name="message" id="message" placeholder="Votre message"/>
                 </div>
 
+
+              
                 <input type="submit" className="block hover:bg-[#717D7E] py-3 px-3"/>
+               
+                
 
             </form>
         </main>
