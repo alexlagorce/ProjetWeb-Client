@@ -4,6 +4,7 @@ import { Home } from './screens/Home';
 import { Ressources } from './screens/Ressources';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import { Contact } from './screens/Contact';
+import { FormulaireVideo } from './screens/FormulaireVideo';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/' element={ <Home/> }/>
         <Route path='/ressources' element={ <Ressources/> }/>
         <Route path='/contact' element={ <Contact/> }/>
+        <Route path="/formulairevideo" element={ <FormulaireVideo/> }/>
       </Routes>
       <footer>
 

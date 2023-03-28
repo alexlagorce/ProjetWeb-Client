@@ -66,3 +66,29 @@ header {
     text-align: center;
     color: white;
 }
+
+.ressources-parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+.ressources-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 400px;
+    height: 250px;
+    background-color: black;
+    margin: auto;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 2px;
+}
+
+
+

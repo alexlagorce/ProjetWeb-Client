@@ -1,5 +1,4 @@
 import { useForm, SubmitHandler } from "react-hook-form"
-import { Link } from 'react-router-dom';
 
 type FormInputs = {
     subject: string,
@@ -21,6 +20,7 @@ export const Contact = () => {
         });
         if (response.ok) {
           console.log('Message envoyé !');
+          //window.location.href = '/';
         } else {
           console.log('Erreur lors de l\'envoi du message');
         }
@@ -51,16 +51,12 @@ export const Contact = () => {
                 </div>
 
                 <div className="mb-3">
-                <label className="block" htmlFor="message">Message</label>
-                <textarea {...register("message")} rows={5} className="border resize-none" name="message" id="message" placeholder="Votre message"/>
+                    <label className="block" htmlFor="message">Message</label>
+                    <textarea {...register("message")} rows={5} className="border resize-none" name="message" id="message" placeholder="Votre message"/>
                 </div>
 
-
-              
-                <input type="submit" className="block hover:bg-[#717D7E] py-3 px-3"/>
-               
-                
-
+                <input type="submit" className="block hover:bg-[#717D7E] py-3 px-3 rounded"/>
+         
             </form>
         </main>
     )
