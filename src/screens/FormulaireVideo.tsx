@@ -18,7 +18,7 @@ export const FormulaireVideo = () => {
           });
           if (response.ok) {
             console.log('Message envoyé !');
-            //window.location.href = '/';
+            window.location.href = '/ressources';
           } else {
             console.log('Erreur lors de l\'envoi du message');
           }

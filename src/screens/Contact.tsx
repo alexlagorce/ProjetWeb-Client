@@ -20,7 +20,7 @@ export const Contact = () => {
         });
         if (response.ok) {
           console.log('Message envoyé !');
-          //window.location.href = '/';
+          window.location.href = '/';
         } else {
           console.log('Erreur lors de l\'envoi du message');
         }

@@ -5,6 +5,7 @@ import { Ressources } from './screens/Ressources';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import { Contact } from './screens/Contact';
 import { FormulaireVideo } from './screens/FormulaireVideo';
+import { ModificationFormulaire } from './screens/ModificationFormulaire';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/ressources' element={ <Ressources/> }/>
         <Route path='/contact' element={ <Contact/> }/>
         <Route path="/formulairevideo" element={ <FormulaireVideo/> }/>
+        <Route path="/modify-formulaire/:id" element={ <ModificationFormulaire id="642978588b6b9dc87ec70279"/> }/>
       </Routes>
       <footer>
 
