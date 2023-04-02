@@ -12,7 +12,7 @@ function App() {
       <header className='flex justify-between items-center mb-5 bg-black'>
         <img className="w-40" src="images/piano.jpeg" alt=""/>
         <nav className='flex justify-end'>
-          <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/'>Acceuil</NavLink><br></br>
+          <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/'>Accueil</NavLink><br></br>
           <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/ressources'>Ressources</NavLink><br></br>
           <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/contact'>Contact</NavLink>
           </nav>
