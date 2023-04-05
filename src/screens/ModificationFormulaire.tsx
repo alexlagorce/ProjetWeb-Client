@@ -6,19 +6,15 @@ type FormInputs = {
   lienvideo: string;
 };
 
-type ThingProps = {
-  id: string;
-};
-
-export const ModificationFormulaire: React.FC<ThingProps> = ({ id }) => {
+export const ModificationFormulaire: React.FC = () => {
   const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormInputs>();
   const [thing, setThing] = useState(null);
-  const { id: videoId } = useParams<{ id: string }>();
+  const { id } = useParams<{ id: string }>();
  
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
-      const response = await fetch(`http://localhost:3000/modify-formulaire/${id}`, {
+      const response = await fetch(`http://localhost:3000/modify-thing/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ export const Home = () => {
     return (
          <main>
             <About/>
-            <YoutubeVideo id="I-HMtBLc7cQ"/>
+            <YoutubeVideo id="3w5vsOkd7vg"/>
             <YoutubeVideo id="zXn4cVgX5wQ"/>
             <SocialLinks/>
         </main>

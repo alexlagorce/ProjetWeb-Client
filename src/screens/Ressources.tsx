@@ -22,10 +22,15 @@ export const Ressources = () => {
             <h3 className="font-extrabold mb-5 text-3xl">Ressources de la chaine</h3>
             <p>Mettez vos vidéos ici !</p>
             <div className="ressources-parent-container">
-                <RessourcesVideo id="I-HMtBLc7cQ"/>
-                {things.map(thing => (
-                <RessourcesVideo id={thing.lienvideo} key={thing._id} />
-                ))}
+            
+                    <RessourcesVideo id="I-HMtBLc7cQ"/>
+                    
+                    {things.map((thing) => (
+                    <Link to={`/thing/${thing._id}`}>
+                        <RessourcesVideo id={thing.lienvideo} key={thing._id} />
+                    </Link>
+                    ))}
+        
             </div>
             <div className="mt-2 mb-5">
                 <Link to="/formulairevideo">

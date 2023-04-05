@@ -1,4 +1,4 @@
-import './style.css';
+import '../styles/styles.css';
 
 type VideoProps = {
     id: String
@@ -9,7 +9,7 @@ export const YoutubeVideo : React.FC<VideoProps> = ({ id }) => {
     let videoTitle = "";
     let videoText = "";
 
-    if (id === "I-HMtBLc7cQ") {
+    if (id === "3w5vsOkd7vg") {
         videoTitle = "Ma dernière vidéo"; //à modifier
     } else if (id === "zXn4cVgX5wQ") {
         videoTitle = "Vidéo spécial covid"; //à modifier

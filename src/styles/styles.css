@@ -71,7 +71,9 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    width: 100vw;
   }
+
 
 .ressources-container {
     display: flex;
