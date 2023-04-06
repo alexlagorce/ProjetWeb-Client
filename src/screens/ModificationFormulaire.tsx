@@ -22,6 +22,7 @@ export const ModificationFormulaire: React.FC = () => {
         body: JSON.stringify(data),
       });
       if (response.ok) {
+        window.location.href = '/ressources';
         console.log('Objet modifié !');
       
       } else {

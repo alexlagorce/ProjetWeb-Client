@@ -40,7 +40,7 @@ export const ObjetsRessources = () => {
             .then(response => {
             if (response.ok) {
                 // Si la suppression réussit, redirigez l'utilisateur vers une autre page.
-                window.location.href = '/';
+                window.location.href = '/ressources';
             } else {
                 // Si la suppression échoue, affichez un message d'erreur à l'utilisateur.
                 console.log("Une erreur est survenue lors de la suppression.");
