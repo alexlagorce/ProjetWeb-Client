@@ -23,7 +23,7 @@ export const Ressources = () => {
             <p>Mettez vos vidéos ici !</p>
             <div className="ressources-parent-container">
             
-                    <RessourcesVideo id="I-HMtBLc7cQ"/>
+                    <RessourcesVideo id="3w5vsOkd7vg"/>
                     
                     {things.map((thing) => (
                     <Link to={`/thing/${thing._id}`}>

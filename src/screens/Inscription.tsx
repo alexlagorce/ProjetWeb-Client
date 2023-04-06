@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useForm, SubmitHandler } from "react-hook-form"
 
 type FormInputs = {
@@ -6,6 +7,8 @@ type FormInputs = {
 }
 
 export const Inscription = () => {
+
+    const [errorMessage, setErrorMessage] = useState('');
 
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
@@ -22,6 +25,7 @@ export const Inscription = () => {
           window.location.href = '/login';
         } else {
           console.log('Erreur lors de l\'envoi du message');
+          setErrorMessage('Il semble que vous ayez déja un compte avec cet adresse mail');
         }
       } catch (error) {
         console.log(error);
@@ -33,6 +37,8 @@ export const Inscription = () => {
     return (
         <main>
             <h3 className="font-extrabold mb-5 text-3xl">Inscription</h3>
+
+            {errorMessage && <p className="text-red-500">{errorMessage}</p>}
 
             <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
 
