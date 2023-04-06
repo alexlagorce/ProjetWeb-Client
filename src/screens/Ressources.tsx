@@ -34,7 +34,7 @@ export const Ressources = () => {
             </div>
             <div className="mt-2 mb-5">
                 <Link to="/formulairevideo">
-                    <button type="submit" className="bg-[#717D7E] py-3 px-3 rounded">Ajouter</button>
+                    <button type="submit" className="bg-[#717D7E] py-3 px-3 rounded">Ajouter une vidéo</button>
                 </Link>
             </div>
         </main>

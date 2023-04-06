@@ -7,6 +7,10 @@ import { Contact } from './screens/Contact';
 import { FormulaireVideo } from './screens/FormulaireVideo';
 import { ModificationFormulaire } from './screens/ModificationFormulaire';
 import { ObjetsRessources } from './screens/PageModifSupression';
+import { Connexion } from './screens/Connexion';
+import { Inscription } from './screens/Inscription';
+import { User } from './screens/User';
+import { Exclu } from './screens/Exclu';
 
 function App() {
 
@@ -17,6 +21,7 @@ function App() {
         <nav className='flex justify-end'>
           <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/'>Accueil</NavLink><br></br>
           <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/ressources'>Ressources</NavLink><br></br>
+          <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/auth'>Exclusivité</NavLink>
           <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/contact'>Contact</NavLink>
           </nav>
       </header>
@@ -27,6 +32,10 @@ function App() {
         <Route path="/formulairevideo" element={ <FormulaireVideo/> }/>
         <Route path="/modify-thing/:id" element={ <ModificationFormulaire/> }/>
         <Route path="/thing/:id" element={ <ObjetsRessources/> }/>
+        <Route path='/auth' element={ <User/> }/>
+        <Route path='/signup' element={ <Inscription/> }/>
+        <Route path='/login' element={ <Connexion/> }/>
+        <Route path='/exclu' element={ <Exclu/> }/>
       </Routes>
       <footer>
 
