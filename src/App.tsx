@@ -5,12 +5,14 @@ import { Ressources } from './screens/Ressources';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import { Contact } from './screens/Contact';
 import { FormulaireVideo } from './screens/FormulaireVideo';
+import { FormulairePhoto } from './screens/FormulairePhoto';
 import { ModificationFormulaire } from './screens/ModificationFormulaire';
 import { ObjetsRessources } from './screens/PageModifSupression';
 import { Connexion } from './screens/Connexion';
 import { Inscription } from './screens/Inscription';
 import { User } from './screens/User';
 import { Exclu } from './screens/Exclu';
+
 
 function App() {
 
@@ -30,6 +32,7 @@ function App() {
         <Route path='/ressources' element={ <Ressources/> }/>
         <Route path='/contact' element={ <Contact/> }/>
         <Route path="/formulairevideo" element={ <FormulaireVideo/> }/>
+        <Route path="/formulairephoto" element={ <FormulairePhoto/> }/>
         <Route path="/modify-thing/:id" element={ <ModificationFormulaire/> }/>
         <Route path="/thing/:id" element={ <ObjetsRessources/> }/>
         <Route path='/auth' element={ <User/> }/>

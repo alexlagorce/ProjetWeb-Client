@@ -7,10 +7,11 @@ type FormInputs = {
 };
 
 export const ModificationFormulaire: React.FC = () => {
+
   const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormInputs>();
   const [thing, setThing] = useState(null);
   const { id } = useParams<{ id: string }>();
- 
+
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {

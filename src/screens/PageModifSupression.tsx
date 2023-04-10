@@ -26,6 +26,7 @@ export const ObjetsRessources = () => {
             <h3 className="font-extrabold mb-5 text-3xl">Objet</h3>
             <p>Vous avez cliqué sur un objet !</p>
         
+        
             {thing && (
             <Link to={`/modify-thing/${thing._id}`}>
                 <button type="submit" className="hover:bg-[#717D7E] rounded mr-3">Modifier</button>
