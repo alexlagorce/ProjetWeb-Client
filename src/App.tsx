@@ -6,12 +6,14 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 import { Contact } from './screens/Contact';
 import { FormulaireVideo } from './screens/FormulaireVideo';
 import { FormulairePhoto } from './screens/FormulairePhoto';
-import { ModificationFormulaire } from './screens/ModificationFormulaire';
-import { ObjetsRessources } from './screens/PageModifSupression';
+import { ModificationFormulaire } from './screens/ModifFormVideo';
+import { ModifVideo } from './screens/ModifVideo';
+import { ModifPhoto } from './screens/ModifPhoto';
 import { Connexion } from './screens/Connexion';
 import { Inscription } from './screens/Inscription';
 import { User } from './screens/User';
 import { Exclu } from './screens/Exclu';
+import { ModificationFormulairePhoto } from './screens/ModifFormPhoto';
 
 
 function App() {
@@ -34,7 +36,9 @@ function App() {
         <Route path="/formulairevideo" element={ <FormulaireVideo/> }/>
         <Route path="/formulairephoto" element={ <FormulairePhoto/> }/>
         <Route path="/modify-thing/:id" element={ <ModificationFormulaire/> }/>
-        <Route path="/thing/:id" element={ <ObjetsRessources/> }/>
+        <Route path="/modify-photo/:id" element={ <ModificationFormulairePhoto/> }/>
+        <Route path="/thing/:id" element={ <ModifVideo/> }/>
+        <Route path="/photo/:id" element={ <ModifPhoto/> }/>
         <Route path='/auth' element={ <User/> }/>
         <Route path='/signup' element={ <Inscription/> }/>
         <Route path='/login' element={ <Connexion/> }/>

@@ -6,7 +6,7 @@ interface Thing {
     lienvideo: string;
 }
 
-export const ObjetsRessources = () => {
+export const ModifVideo = () => {
 
     const [thing, setThing] = useState<Thing | null>(null);
     const { id } = useParams<{ id: string }>();
@@ -23,8 +23,8 @@ export const ObjetsRessources = () => {
 
     return (
         <main>
-            <h3 className="font-extrabold mb-5 text-3xl">Objet</h3>
-            <p>Vous avez cliqué sur un objet !</p>
+            <h3 className="font-extrabold mb-5 text-3xl">Vidéo</h3>
+            <p>Vous avez cliqué sur une vidéo !</p>
         
         
             {thing && (

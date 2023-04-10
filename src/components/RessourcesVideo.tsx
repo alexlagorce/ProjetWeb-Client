@@ -10,7 +10,7 @@ export const RessourcesVideo : React.FC<VideoProps> = ({ id }) => {
         <main>
             <ul>
 
-                <div className="ressources-container">
+                <div className="ressources-video">
 
                     <iframe className="video" width="560" height="315" 
                     src={"https://www.youtube.com/embed/" +id}

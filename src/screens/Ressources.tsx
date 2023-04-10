@@ -39,7 +39,7 @@ export const Ressources = () => {
             <h3 className="font-extrabold mb-5 text-3xl">Ressources de la chaine</h3>
             <p>Mettez vos vidéos ici !</p>
 
-            <div className="ressources-parent-container">
+            <div className="ressources-container">
             
                 <RessourcesVideo id="3w5vsOkd7vg"/>
                     
@@ -59,15 +59,15 @@ export const Ressources = () => {
             
             <p>Mettez vos photos ici !</p>
 
-            <div className="ressources-parent-container">
+            <div className="ressources-container">
 
                 <RessourcesPhoto id="https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753_1280.jpg"/>
                 <RessourcesPhoto id="https://cdn.pixabay.com/photo/2017/10/03/12/50/northern-lights-2812374_960_720.jpg"/>
 
                 {photos.map((photo) => (
-               
+                <Link to={`/photo/${photo._id}`}>
                     <RessourcesPhoto id={photo.lienphoto} key={photo._id} />
-             
+                </Link>
                 ))}
 
             </div>

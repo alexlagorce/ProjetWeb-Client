@@ -66,23 +66,22 @@ header {
     text-align: center;
     color: white;
 }
-
-.ressources-parent-container {
+  
+.ressources-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100vw;
   }
 
-
-.ressources-container {
+.ressources-video {
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     width: 400px;
     height: 250px;
-    background-color: black;
     margin: auto;
     border-radius: 15px;
     margin-bottom: 50px;
@@ -90,7 +89,30 @@ header {
     font-weight: bold;
     font-size: 2em;
     margin: 2px;
+    padding-bottom: 20px; 
+    overflow: hidden; /* masque tout contenu débordant de l'élément parent */
 }
 
+.ressources-photo {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 280px;
+    margin: auto;
+    margin-bottom: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 2px;
+    padding-bottom: 20px; 
+    overflow: hidden; /* masque tout contenu débordant de l'élément parent */
+}
+
+.ressources-photo img {
+    max-width: 450px;
+  }
 
 

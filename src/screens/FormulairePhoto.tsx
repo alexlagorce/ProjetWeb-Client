@@ -36,7 +36,7 @@ export const FormulairePhoto = () => {
             <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="mb-3">
-                    <label className="block" htmlFor="lienvideo">Lien de votre photo</label>
+                    <label className="block" htmlFor="lienvphoto">Lien de votre photo</label>
                     <input {...register("lienphoto")} className="border" type="text" name="lienphoto" id="lienphoto" placeholder="Veuillez entrez le lien de votre photo :" size={50}/>
                 </div>
 
