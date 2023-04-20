@@ -22,7 +22,10 @@ export const Connexion = () => {
         });
         if (response.ok) {
           console.log('Message envoyé !');
-          window.location.href = '/exclu';
+          const data = await response.json();
+          localStorage.setItem('token', data.token);      
+          //window.location.href = '/';
+          //window.location.href = '/exclu';
         } else {
           console.log('Erreur lors de l\'envoi du message');
           setErrorMessage('Identifiant ou mot de passe incorrect, veuillez réessayer');

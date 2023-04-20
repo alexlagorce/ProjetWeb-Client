@@ -42,8 +42,8 @@ export const Ressources = () => {
             <div className="ressources-container">
             
                 <RessourcesVideo id="3w5vsOkd7vg"/>
-                    
-                {things.map((thing) => (
+                
+                {things && things.map((thing) => (
                 <Link to={`/thing/${thing._id}`}>
                     <RessourcesVideo id={thing.lienvideo} key={thing._id} />
                 </Link>
@@ -61,7 +61,6 @@ export const Ressources = () => {
 
             <div className="ressources-container">
 
-                <RessourcesPhoto id="https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753_1280.jpg"/>
                 <RessourcesPhoto id="https://cdn.pixabay.com/photo/2017/10/03/12/50/northern-lights-2812374_960_720.jpg"/>
 
                 {photos.map((photo) => (

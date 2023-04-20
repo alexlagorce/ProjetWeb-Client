@@ -1,5 +1,10 @@
+//C'est la page lorsque l'on clique sur un objet de type vidéo
+
 import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
+
+const token = localStorage.getItem('token');
+const headers = { 'Authorization': 'Bearer ' + token };
 
 interface Thing {
     _id: string;
@@ -20,7 +25,8 @@ export const ModifVideo = () => {
     if (!thing) {
         return <div>Chargement en cours...</div>;
     }
-
+    
+    
     return (
         <main>
             <h3 className="font-extrabold mb-5 text-3xl">Vidéo</h3>
@@ -37,6 +43,7 @@ export const ModifVideo = () => {
             <button type="submit" className="hover:bg-[#717D7E] rounded ml-3" onClick={() => {
             fetch(`http://localhost:3000/thing/${id}`, {
             method: "DELETE",
+            headers: headers
             })
             .then(response => {
             if (response.ok) {
@@ -51,7 +58,7 @@ export const ModifVideo = () => {
             console.log("Une erreur est survenue lors de la suppression:", error);
             });
             }}>Supprimer</button>
-
+        
 
         </main>
     )

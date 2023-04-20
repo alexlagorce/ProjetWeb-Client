@@ -39,6 +39,7 @@ function App() {
         <Route path="/modify-photo/:id" element={ <ModificationFormulairePhoto/> }/>
         <Route path="/thing/:id" element={ <ModifVideo/> }/>
         <Route path="/photo/:id" element={ <ModifPhoto/> }/>
+        
         <Route path='/auth' element={ <User/> }/>
         <Route path='/signup' element={ <Inscription/> }/>
         <Route path='/login' element={ <Connexion/> }/>

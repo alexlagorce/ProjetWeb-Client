@@ -1,3 +1,5 @@
+//C'est la page lorsque l'on clique sur un objet de type photo
+
 import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 
