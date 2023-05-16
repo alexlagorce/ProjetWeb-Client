@@ -6,6 +6,8 @@ type FormInputs = {
   lienvideo: string;
 };
 
+const token = localStorage.getItem('token');
+
 export const ModificationFormulaire: React.FC = () => {
 
   const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormInputs>();
@@ -18,7 +20,8 @@ export const ModificationFormulaire: React.FC = () => {
       const response = await fetch(`http://localhost:3000/modify-thing/${id}`, {
         method: 'PUT',
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify(data),
       });

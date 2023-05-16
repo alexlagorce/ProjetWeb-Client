@@ -2,6 +2,7 @@
 
 import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
+import { RessourcesPhoto } from "../components/RessourcesPhoto";
 
 interface Thing {
     _id: string;
@@ -27,12 +28,12 @@ export const ModifPhoto = () => {
     return (
         <main>
             <h3 className="font-extrabold mb-5 text-3xl">Photo</h3>
-            <p>Vous avez cliqué sur une photo !</p>
-        
+    
+            <RessourcesPhoto id={thing.lienphoto}/>
         
             {thing && (
             <Link to={`/modify-photo/${thing._id}`}>
-                <button type="submit" className="hover:bg-[#717D7E] rounded mr-3">Modifier</button>
+                <button type="submit" className="hover:bg-[#717D7E] rounded mr-3 mt-3">Modifier</button>
             </Link>
             )}
             

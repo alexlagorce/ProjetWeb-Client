@@ -36,12 +36,11 @@ export const Ressources = () => {
 
         <main style={{ marginBottom: '40px' }}>
 
-            <h3 className="font-extrabold mb-5 text-3xl">Ressources de la chaine</h3>
-            <p>Mettez vos vidéos ici !</p>
+            <h3 className="font-extrabold mb-5 text-3xl">Ajoute tes ressources ici !</h3>
 
             <div className="ressources-container">
-            
-                <RessourcesVideo id="3w5vsOkd7vg"/>
+
+        
                 
                 {things && things.map((thing) => (
                 <Link to={`/thing/${thing._id}`}>
@@ -56,14 +55,11 @@ export const Ressources = () => {
                     <button type="submit" className="bg-[#717D7E] py-3 px-3 rounded">Ajouter une vidéo</button>
                 </Link>
             </div>
-            
-            <p>Mettez vos photos ici !</p>
+        
 
-            <div className="ressources-container">
+            <div className="ressources-container mt-5">
 
-                <RessourcesPhoto id="https://cdn.pixabay.com/photo/2017/10/03/12/50/northern-lights-2812374_960_720.jpg"/>
-
-                {photos.map((photo) => (
+                {photos && photos.map((photo) => (
                 <Link to={`/photo/${photo._id}`}>
                     <RessourcesPhoto id={photo.lienphoto} key={photo._id} />
                 </Link>

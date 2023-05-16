@@ -12,6 +12,35 @@ header {
     background-color: #BDC3C7;
 }
 
+/* en tete avec logo et menu */
+.head {
+    background-color: black;
+}
+
+.section-padding {
+    padding-bottom: 3rem;
+  }
+
+.reseaux {
+    margin-bottom: 40px;
+}
+
+.youtube {
+    background-image: url(/public/images/youtube.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+
+.instagram {
+    background-image: url(/public/images/insta.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+
 .video-container {
     display: flex;
     flex-direction: column;
@@ -23,7 +52,9 @@ header {
     margin: auto;
     border-radius: 15px;
     margin-bottom: 50px;
+    transition: transform 0.2s ease-in-out;
 }
+
 
 .video-container .titre {
     text-align: left;
@@ -35,6 +66,8 @@ header {
 .video {
     width: 80%;
     height: 80%;
+    top: 50%; 
+    left: 50%;
 }
   
 .text{

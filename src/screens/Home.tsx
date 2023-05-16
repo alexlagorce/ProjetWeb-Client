@@ -7,8 +7,8 @@ export const Home = () => {
          <main>
             <About/>
             <YoutubeVideo id="3w5vsOkd7vg"/>
-            <YoutubeVideo id="zXn4cVgX5wQ"/>
-            <SocialLinks/>
+            <YoutubeVideo id="I-HMtBLc7cQ"/>
+            <YoutubeVideo id="J2V99ozwfpU"/>
         </main>
     )
 }

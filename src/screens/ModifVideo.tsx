@@ -2,9 +2,9 @@
 
 import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
+import { RessourcesVideo } from "../components/RessourcesVideo";
 
 const token = localStorage.getItem('token');
-const headers = { 'Authorization': 'Bearer ' + token };
 
 interface Thing {
     _id: string;
@@ -26,16 +26,16 @@ export const ModifVideo = () => {
         return <div>Chargement en cours...</div>;
     }
     
-    
+
     return (
         <main>
             <h3 className="font-extrabold mb-5 text-3xl">Vidéo</h3>
-            <p>Vous avez cliqué sur une vidéo !</p>
-        
-        
+
+            <RessourcesVideo id={thing.lienvideo} key={thing._id}/>
+
             {thing && (
             <Link to={`/modify-thing/${thing._id}`}>
-                <button type="submit" className="hover:bg-[#717D7E] rounded mr-3">Modifier</button>
+                <button type="submit" className="hover:bg-[#717D7E] rounded mr-3 mt-3">Modifier</button>
             </Link>
             )}
             
@@ -43,7 +43,10 @@ export const ModifVideo = () => {
             <button type="submit" className="hover:bg-[#717D7E] rounded ml-3" onClick={() => {
             fetch(`http://localhost:3000/thing/${id}`, {
             method: "DELETE",
-            headers: headers
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+              }
             })
             .then(response => {
             if (response.ok) {

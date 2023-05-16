@@ -1,15 +1,15 @@
 import { useForm, SubmitHandler } from "react-hook-form"
 
 type FormInputs = {
-    lienphoto: string,
+    commentaire: string,
 }
 
-export const FormulairePhoto = () => {
+export const FormulaireCommentaire = () => {
 
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
         try {
-          const response = await fetch('http://localhost:3000/formulairephoto', {
+          const response = await fetch('http://localhost:3000/formulairecommentaires', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ export const FormulairePhoto = () => {
           });
           if (response.ok) {
             console.log('Message envoyé !');
-            window.location.href = '/ressources';
+            window.location.href = '/commentaires';
           } else {
             console.log('Erreur lors de l\'envoi du message');
           }
@@ -36,8 +36,8 @@ export const FormulairePhoto = () => {
             <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="mb-3">
-                    <label className="block" htmlFor="lienphoto">Lien de votre photo</label>
-                    <input {...register("lienphoto")} className="border" type="text" name="lienphoto" id="lienphoto" placeholder="Veuillez entrez le lien de votre photo :" size={50}/>
+                    <label className="block" htmlFor="commentaire">Commentaire</label>
+                    <input {...register("commentaire")} className="border" type="text" name="commentaire" id="commentaire" placeholder="Veuillez entrez commentaire :" size={50}/>
                 </div>
 
                 <input type="submit" className="block hover:bg-[#717D7E] py-3 px-3 rounded"/>

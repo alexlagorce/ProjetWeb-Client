@@ -22,9 +22,10 @@ export const Connexion = () => {
         });
         if (response.ok) {
           console.log('Message envoyé !');
+          //L'utilisateur obtient un token que l'on stocke dans localStorage
           const data = await response.json();
           localStorage.setItem('token', data.token);      
-          //window.location.href = '/';
+          window.location.href = '/commentaires';
           //window.location.href = '/exclu';
         } else {
           console.log('Erreur lors de l\'envoi du message');
