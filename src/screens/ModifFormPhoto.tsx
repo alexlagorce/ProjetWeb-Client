@@ -15,7 +15,7 @@ export const ModificationFormulairePhoto: React.FC = () => {
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
-      const response = await fetch(`http://localhost:5000/modify-photo/${id}`, {
+      const response = await fetch(`http://web-project-api.cluster-ig3.igpolytech.fr/modify-photo/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export const ModificationFormulairePhoto: React.FC = () => {
   useEffect(() => {
     const fetchThing = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/`);
+        const response = await fetch(`http://web-project-api.cluster-ig3.igpolytech.fr/`);
         if (response.ok) {
           const data = await response.json();
           setThing(data);

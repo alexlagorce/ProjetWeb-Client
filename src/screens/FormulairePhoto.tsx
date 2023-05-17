@@ -9,7 +9,7 @@ export const FormulairePhoto = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
         try {
-          const response = await fetch('http://localhost:5000/formulairephoto', {
+          const response = await fetch('http://web-project-api.cluster-ig3.igpolytech.fr/formulairephoto', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

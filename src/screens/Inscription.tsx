@@ -13,7 +13,7 @@ export const Inscription = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
       try {
-        const response = await fetch('http://localhost:5000/signup', {
+        const response = await fetch('http://web-project-api.cluster-ig3.igpolytech.fr/signup', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
