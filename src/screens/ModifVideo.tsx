@@ -25,7 +25,7 @@ export const ModifVideo = () => {
     if (!thing) {
         return <div>Chargement en cours...</div>;
     }
-    
+
 
     return (
         <main>

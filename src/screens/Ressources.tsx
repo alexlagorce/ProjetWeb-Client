@@ -20,14 +20,14 @@ export const Ressources = () => {
 
     // pour récuperer tout mes objets vidéo
     useEffect(() => {
-        fetch('https://web-project-api.cluster-ig3.igpolytech.fr/video/')
+        fetch('https://web-project-api.cluster-ig3.igpolytech.fr/video')
           .then(response => response.json())
           .then(data => setThings(data));
     }, []);
 
     // pour récuperer tout mes objets photo
     useEffect(() => {
-        fetch('https://web-project-api.cluster-ig3.igpolytech.fr/')
+        fetch('https://web-project-api.cluster-ig3.igpolytech.fr')
           .then(response => response.json())
           .then(data => setPhotos(data));
     }, []);

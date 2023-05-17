@@ -37,7 +37,7 @@ export const ModificationFormulairePhoto: React.FC = () => {
   useEffect(() => {
     const fetchThing = async () => {
       try {
-        const response = await fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/`);
+        const response = await fetch(`https://web-project-api.cluster-ig3.igpolytech.fr`);
         if (response.ok) {
           const data = await response.json();
           setThing(data);
