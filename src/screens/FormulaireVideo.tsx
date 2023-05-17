@@ -9,7 +9,7 @@ export const FormulaireVideo = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
         try {
-          const response = await fetch('http://localhost:3000/formulairevideo', {
+          const response = await fetch('http://localhost:5000/formulairevideo', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

@@ -20,14 +20,14 @@ export const Ressources = () => {
 
     // pour récuperer tout mes objets vidéo
     useEffect(() => {
-        fetch('http://localhost:3000/video/')
+        fetch('http://localhost:5000/video/')
           .then(response => response.json())
           .then(data => setThings(data));
     }, []);
 
     // pour récuperer tout mes objets photo
     useEffect(() => {
-        fetch('http://localhost:3000/')
+        fetch('http://localhost:5000/')
           .then(response => response.json())
           .then(data => setPhotos(data));
     }, []);

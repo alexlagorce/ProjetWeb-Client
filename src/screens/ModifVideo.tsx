@@ -17,7 +17,7 @@ export const ModifVideo = () => {
     const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
-        fetch(`http://localhost:3000/${id}`)
+        fetch(`http://localhost:5000/${id}`)
           .then(response => response.json())
           .then(data => setThing(data));
     }, [id]);
@@ -41,7 +41,7 @@ export const ModifVideo = () => {
             
 
             <button type="submit" className="hover:bg-[#717D7E] rounded ml-3" onClick={() => {
-            fetch(`http://localhost:3000/thing/${id}`, {
+            fetch(`http://localhost:5000/thing/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

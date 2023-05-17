@@ -15,7 +15,7 @@ export const ModificationFormulairePhoto: React.FC = () => {
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
-      const response = await fetch(`http://localhost:3000/modify-photo/${id}`, {
+      const response = await fetch(`http://localhost:5000/modify-photo/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export const ModificationFormulairePhoto: React.FC = () => {
   useEffect(() => {
     const fetchThing = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/`);
+        const response = await fetch(`http://localhost:5000/`);
         if (response.ok) {
           const data = await response.json();
           setThing(data);

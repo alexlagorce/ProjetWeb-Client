@@ -11,7 +11,7 @@ export const Commentaire = () => {
     const [commentaires, setCommentaires] = useState<Commentaire[]>([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/commentaires')
+        fetch('http://localhost:5000/commentaires')
             .then(response => {
                 console.log(response); // Affiche la réponse dans la console
                 return response.json();
