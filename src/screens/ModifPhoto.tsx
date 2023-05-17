@@ -16,7 +16,7 @@ export const ModifPhoto = () => {
 
     // on ecupere les objets de la base
     useEffect(() => {
-        fetch(`http://web-project-api.cluster-ig3.igpolytech.fr/photo/${id}`)
+        fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/photo/${id}`)
           .then(response => response.json())
           .then(data => setThing(data));
     }, [id]);
@@ -39,7 +39,7 @@ export const ModifPhoto = () => {
             
 
             <button type="submit" className="hover:bg-[#717D7E] rounded ml-3" onClick={() => {
-            fetch(`http://web-project-api.cluster-ig3.igpolytech.fr/photo/${id}`, {
+            fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/photo/${id}`, {
             method: "DELETE",
             })
             .then(response => {

@@ -17,7 +17,7 @@ export const ModificationFormulaire: React.FC = () => {
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
-      const response = await fetch(`http://web-project-api.cluster-ig3.igpolytech.fr/modify-thing/${id}`, {
+      const response = await fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/modify-thing/${id}`, {
         method: 'PUT',
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export const ModificationFormulaire: React.FC = () => {
   useEffect(() => {
     const fetchThing = async () => {
       try {
-        const response = await fetch(`http://web-project-api.cluster-ig3.igpolytech.fr/`);
+        const response = await fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/`);
         if (response.ok) {
           const data = await response.json();
           setThing(data);

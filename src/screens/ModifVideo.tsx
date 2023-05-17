@@ -17,7 +17,7 @@ export const ModifVideo = () => {
     const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
-        fetch(`http://web-project-api.cluster-ig3.igpolytech.fr/${id}`)
+        fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/${id}`)
           .then(response => response.json())
           .then(data => setThing(data));
     }, [id]);
@@ -41,7 +41,7 @@ export const ModifVideo = () => {
             
 
             <button type="submit" className="hover:bg-[#717D7E] rounded ml-3" onClick={() => {
-            fetch(`http://web-project-api.cluster-ig3.igpolytech.fr/thing/${id}`, {
+            fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/thing/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

@@ -1,5 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form"
 
+
 type FormInputs = {
     commentaire: string,
 }
@@ -9,7 +10,7 @@ export const FormulaireCommentaire = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
         try {
-          const response = await fetch('http://web-project-api.cluster-ig3.igpolytech.fr/formulairecommentaires', {
+          const response = await fetch('https://web-project-api.cluster-ig3.igpolytech.fr/formulairecommentaires', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

@@ -9,7 +9,7 @@ export const FormulaireVideo = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
         try {
-          const response = await fetch('http://web-project-api.cluster-ig3.igpolytech.fr/formulairevideo', {
+          const response = await fetch('https://web-project-api.cluster-ig3.igpolytech.fr/formulairevideo', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

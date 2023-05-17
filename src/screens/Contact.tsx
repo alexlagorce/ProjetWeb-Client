@@ -11,7 +11,7 @@ export const Contact = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
       try {
-        const response = await fetch('http://web-project-api.cluster-ig3.igpolytech.fr/contact', {
+        const response = await fetch('https://web-project-api.cluster-ig3.igpolytech.fr/contact', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
