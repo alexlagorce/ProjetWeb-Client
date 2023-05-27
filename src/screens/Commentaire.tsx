@@ -1,10 +1,27 @@
 import { Link } from "react-router-dom"
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
+
 
 interface Commentaire {
     _id: number;
     commentaire: String;
 }
+
+export const LogoutButton = () => {
+    const handleLogout = () => {
+      localStorage.removeItem('token');
+      // Autres actions de déconnexion si nécessaire
+    };
+  
+    return (
+      <Link to="/">
+        <button type="submit" className="bg-[#717D7E] py-3 px-3 rounded" onClick={handleLogout}>
+          Se déconnecter
+        </button>
+      </Link>
+    );
+  };
 
 export const Commentaire = () => {
 
@@ -60,7 +77,10 @@ export const Commentaire = () => {
             {commentaire.commentaire}
         </div>
     ))}
-</div>
+            <div className="mt-2 mb-5">
+                <LogoutButton />
+            </div>
+        </div>
 
         </main>
     )
