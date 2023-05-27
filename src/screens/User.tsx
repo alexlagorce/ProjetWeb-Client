@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom"
+import React, { useEffect } from 'react';
+
 
 export const User = () => {
 
+    useEffect(() => {
+        // Vérifier si un token est présent dans le localStorage
+        const token = localStorage.getItem('token');
+        if (token) {
+          // Effectuer une action pour se connecter automatiquement (par exemple, rediriger vers la page des commentaires)
+          window.location.href = '/commentaires';
+        }
+      }, []); // Les crochets vides [] en tant que deuxième argument assurent que ce code ne s'exécute qu'une seule fois au chargement du composant
+  
     return (
 
         <section>
@@ -23,3 +34,4 @@ export const User = () => {
         
     )
 }
+

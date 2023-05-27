@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm, SubmitHandler } from "react-hook-form"
 
 type FormInputs = {
@@ -12,6 +12,10 @@ export const Connexion = () => {
 
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
+      //production
+      //'https://web-project-api.cluster-ig3.igpolytech.fr/login'
+      //developpement 
+      //http://localhost:5000/login
       try {
         const response = await fetch('https://web-project-api.cluster-ig3.igpolytech.fr/login', {
           method: 'POST',
@@ -26,7 +30,6 @@ export const Connexion = () => {
           const data = await response.json();
           localStorage.setItem('token', data.token);      
           window.location.href = '/commentaires';
-          //window.location.href = '/exclu';
         } else {
           console.log('Erreur lors de l\'envoi du message');
           setErrorMessage('Identifiant ou mot de passe incorrect, veuillez réessayer');
@@ -38,6 +41,8 @@ export const Connexion = () => {
     };
 
     const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>()
+
+
     return (
         <main>
             <h3 className="font-extrabold mb-5 text-3xl">Connexion</h3>

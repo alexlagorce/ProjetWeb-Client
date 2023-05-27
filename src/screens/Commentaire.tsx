@@ -10,6 +10,11 @@ export const Commentaire = () => {
 
     const [commentaires, setCommentaires] = useState<Commentaire[]>([]);
 
+
+    //production
+    //'https://web-project-api.cluster-ig3.igpolytech.fr/commentaires'
+    //developpement 
+    //'http://localhost:5000/commentaires'
     useEffect(() => {
         fetch('https://web-project-api.cluster-ig3.igpolytech.fr/commentaires')
             .then(response => {
