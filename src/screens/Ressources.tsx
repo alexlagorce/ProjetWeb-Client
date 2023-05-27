@@ -5,7 +5,7 @@ import { RessourcesPhoto } from "../components/RessourcesPhoto";
 
 interface Thing {
     _id: number;
-    lienvideo: String;
+    lienvideo: string;
 }
 
 interface Photo {
@@ -18,8 +18,13 @@ export const Ressources = () => {
     const [things, setThings] = useState<Thing[]>([]);
     const [photos, setPhotos] = useState<Photo[]>([]);
 
+    //adresse developpement
+    //'http://localhost:5000/video/'
+    //adresse production
+    //'https://web-project-api.cluster-ig3.igpolytech.fr/video'
     // pour récuperer tout mes objets vidéo
     useEffect(() => {
+        //adresse developpement
         fetch('https://web-project-api.cluster-ig3.igpolytech.fr/video')
           .then(response => response.json())
           .then(data => setThings(data));
