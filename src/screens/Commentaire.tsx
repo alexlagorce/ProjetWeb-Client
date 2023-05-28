@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import React, { useEffect, useState } from "react";
 
 
-//lol
 interface Commentaire {
     _id: number;
     commentaire: String;
