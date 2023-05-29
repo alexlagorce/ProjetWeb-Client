@@ -14,7 +14,13 @@ export const ModifPhoto = () => {
     const [thing, setThing] = useState<Thing | null>(null);
     const { id } = useParams<{ id: string }>();
 
+    const token = localStorage.getItem('token');
+
+    const [errorMessage, setErrorMessage] = useState("");
+
     // on ecupere les objets de la base
+    //'http://localhost:5000/photo/${id}'
+    //`https://web-project-api.cluster-ig3.igpolytech.fr/photo/${id}`
     useEffect(() => {
         fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/photo/${id}`)
           .then(response => response.json())
@@ -37,10 +43,15 @@ export const ModifPhoto = () => {
             </Link>
             )}
             
-
             <button type="submit" className="hover:bg-[#717D7E] rounded ml-3" onClick={() => {
-            fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/photo/${id}`, {
+            //'http://localhost:5000/photo/${id}'
+            //`https://web-project-api.cluster-ig3.igpolytech.fr/photo/${id}` 
+            fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/photo/${id}` , {
             method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token,
+              },
             })
             .then(response => {
             if (response.ok) {
@@ -49,12 +60,18 @@ export const ModifPhoto = () => {
             } else {
                 // Si la suppression échoue, affichez un message d'erreur à l'utilisateur.
                 console.log("Une erreur est survenue lors de la suppression.");
+                setErrorMessage("Vous devez avoir un compte pour supprimer une ressource");
             }
             })
             .catch(error => {
             console.log("Une erreur est survenue lors de la suppression:", error);
             });
             }}>Supprimer</button>
+
+            <div className="error-message">
+                {errorMessage && <p>{errorMessage}</p>}
+            </div>
+            
 
 
         </main>

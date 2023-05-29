@@ -16,12 +16,14 @@ export const ModifVideo = () => {
 
     const token = localStorage.getItem('token');
 
+    const [errorMessage, setErrorMessage] = useState("");
+
     //production
-    //'https://web-project-api.cluster-ig3.igpolytech.fr/${id}'
+    //`https://web-project-api.cluster-ig3.igpolytech.fr/${id}`
     //developpement
     //`http://localhost:5000/${id}`
     useEffect(() => {
-        fetch('https://web-project-api.cluster-ig3.igpolytech.fr/${id}')
+        fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/${id}`)
           .then(response => response.json())
           .then(data => setThing(data));
     }, [id]);
@@ -62,12 +64,18 @@ export const ModifVideo = () => {
             } else {
                 // Si la suppression échoue, affichez un message d'erreur à l'utilisateur.
                 console.log("Une erreur est survenue lors de la suppression.");
+                setErrorMessage("Vous devez avoir un compte pour supprimer une ressource");
             }
             })
             .catch(error => {
             console.log("Une erreur est survenue lors de la suppression:", error);
             });
             }}>Supprimer</button>
+
+            <div className="error-message">
+                {errorMessage && <p>{errorMessage}</p>}
+            </div>
+            
         
 
         </main>

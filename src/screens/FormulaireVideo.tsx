@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form"
+import { useState } from "react";
 
 type FormInputs = {
     lienvideo: string,
@@ -7,6 +8,7 @@ type FormInputs = {
 export const FormulaireVideo = () => {
 
     const token = localStorage.getItem('token');
+    const [errorMessage, setErrorMessage] = useState("");
 
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
@@ -28,6 +30,7 @@ export const FormulaireVideo = () => {
             window.location.href = '/ressources';
           } else {
             console.log('Erreur lors de l\'envoi du message');
+            setErrorMessage("Vous devez avoir un compte pour ajouter une ressource");
           }
         } catch (error) {
           console.log(error);
@@ -50,6 +53,11 @@ export const FormulaireVideo = () => {
                 <input type="submit" className="block hover:bg-[#717D7E] py-3 px-3 rounded"/>
 
             </form>
+
+            <div className="error-message">
+                {errorMessage && <p>{errorMessage}</p>}
+            </div>
+
         </main>
     )
 }

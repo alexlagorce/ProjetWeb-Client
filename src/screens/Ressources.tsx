@@ -31,6 +31,10 @@ export const Ressources = () => {
     }, []);
 
     // pour récuperer tout mes objets photo
+    //production
+    //'https://web-project-api.cluster-ig3.igpolytech.fr'
+    //developpement
+    //'http://localhost:5000'
     useEffect(() => {
         fetch('https://web-project-api.cluster-ig3.igpolytech.fr')
           .then(response => response.json())

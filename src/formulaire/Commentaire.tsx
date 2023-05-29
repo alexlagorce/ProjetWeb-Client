@@ -41,7 +41,7 @@ export const FormulaireCommentaire = () => {
             <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="mb-3">
-                    <label className="block" htmlFor="commentaire">Commentaire</label>
+                    <label className="block" htmlFor="commentaire">Ajoute ton commentaire</label>
                     <input {...register("commentaire")} className="border" type="text" name="commentaire" id="commentaire" placeholder="Veuillez entrez commentaire :" size={50}/>
                 </div>
 

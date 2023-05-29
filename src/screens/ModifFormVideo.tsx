@@ -14,6 +14,7 @@ export const ModificationFormulaire: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   const token = localStorage.getItem('token');
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
@@ -35,6 +36,7 @@ export const ModificationFormulaire: React.FC = () => {
       
       } else {
         console.log('Erreur lors de la modification de l\'objet');
+        setErrorMessage("Vous devez avoir un compte pour modifier une ressource");
       }
     } catch (error) {
       console.log(error);
@@ -78,7 +80,12 @@ export const ModificationFormulaire: React.FC = () => {
         </div>
 
         <input type="submit" className="block hover:bg-[#717D7E] py-3 px-3 rounded"/>
+
       </form>
+
+      <div className="error-message">
+        {errorMessage && <p>{errorMessage}</p>}
+        </div>
     </main>
   );
 };

@@ -12,13 +12,20 @@ export const ModificationFormulairePhoto: React.FC = () => {
   const [thing, setThing] = useState(null);
   const { id } = useParams<{ id: string }>();
 
+  const token = localStorage.getItem('token');
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
+      //production
+      //`https://web-project-api.cluster-ig3.igpolytech.fr/modify-photo/${id}`
+      //developpement
+      //`http://localhost:5000/modify-photo/${id}`
       const response = await fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/modify-photo/${id}`, {
         method: 'PUT',
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify(data),
       });
@@ -28,6 +35,7 @@ export const ModificationFormulairePhoto: React.FC = () => {
       
       } else {
         console.log('Erreur lors de la modification de l\'objet');
+        setErrorMessage("Vous devez avoir un compte pour modifier une ressource");
       }
     } catch (error) {
       console.log(error);
@@ -37,6 +45,10 @@ export const ModificationFormulairePhoto: React.FC = () => {
   useEffect(() => {
     const fetchThing = async () => {
       try {
+        //production
+        //`https://web-project-api.cluster-ig3.igpolytech.fr`
+        //developpement
+        //`http://localhost:5000`
         const response = await fetch(`https://web-project-api.cluster-ig3.igpolytech.fr`);
         if (response.ok) {
           const data = await response.json();
@@ -69,6 +81,10 @@ export const ModificationFormulairePhoto: React.FC = () => {
         <input type="submit" className="block hover:bg-[#717D7E] py-3 px-3 rounded"/>
 
     </form>
+
+    <div className="error-message">
+      {errorMessage && <p>{errorMessage}</p>}
+    </div>
 
     </main>
   );
