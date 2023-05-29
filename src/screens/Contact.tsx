@@ -11,6 +11,10 @@ export const Contact = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
       try {
+        //prod
+        //'https://web-project-api.cluster-ig3.igpolytech.fr/contact'
+        //dev
+        //'http://localhost:5000/contact'
         const response = await fetch('https://web-project-api.cluster-ig3.igpolytech.fr/contact', {
           method: 'POST',
           headers: {
@@ -20,7 +24,7 @@ export const Contact = () => {
         });
         if (response.ok) {
           console.log('Message envoyé !');
-          //window.location.href = '/';
+          window.location.href = '/confirmation';
         } else {
           console.log('Erreur lors de l\'envoi du message');
         }

@@ -9,6 +9,10 @@ export const FormulaireCommentaire = () => {
 
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
+        //production
+        //'https://web-project-api.cluster-ig3.igpolytech.fr/formulairecommentaires'
+        //developpement
+        //'http://localhost:5000/formulairecommentaires'
         try {
           const response = await fetch('https://web-project-api.cluster-ig3.igpolytech.fr/formulairecommentaires', {
             method: 'POST',
@@ -19,7 +23,7 @@ export const FormulaireCommentaire = () => {
           });
           if (response.ok) {
             console.log('Message envoyé !');
-            window.location.href = '/commentaires';
+            window.location.href = '/ressources';
           } else {
             console.log('Erreur lors de l\'envoi du message');
           }

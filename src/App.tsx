@@ -16,6 +16,7 @@ import { Connexion } from './screens/Connexion';
 import { Inscription } from './screens/Inscription';
 import { User } from './screens/User';
 import { ModificationFormulairePhoto } from './screens/ModifFormPhoto';
+import { ConfirmationContact } from './screens/ConfirmationContact';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         <Route path='/auth' element={ <User/> }/>
         <Route path='/signup' element={ <Inscription/> }/>
         <Route path='/login' element={ <Connexion/> }/>
+        <Route path='/confirmation' element={ <ConfirmationContact/> }/>
       </Routes>
       <footer>
         

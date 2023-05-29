@@ -32,12 +32,6 @@ export const Commentaire = () => {
     return(
         <main>
 
-            <div className="mt-2 mb-5">
-                <Link to="/formulairecommentaires">
-                    <button type="submit" className="bg-[#717D7E] py-3 px-3 rounded">Ajouter un commentaire</button>
-                </Link>
-            </div>
-
             <div style={{ 
             display: "flex",
             flexDirection: "column",
