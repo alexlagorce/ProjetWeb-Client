@@ -4,8 +4,6 @@ import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { RessourcesVideo } from "../components/RessourcesVideo";
 
-const token = localStorage.getItem('token');
-
 interface Thing {
     _id: string;
     lienvideo: string;
@@ -16,8 +14,14 @@ export const ModifVideo = () => {
     const [thing, setThing] = useState<Thing | null>(null);
     const { id } = useParams<{ id: string }>();
 
+    const token = localStorage.getItem('token');
+
+    //production
+    //'https://web-project-api.cluster-ig3.igpolytech.fr/${id}'
+    //developpement
+    //`http://localhost:5000/${id}`
     useEffect(() => {
-        fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/${id}`)
+        fetch('https://web-project-api.cluster-ig3.igpolytech.fr/${id}')
           .then(response => response.json())
           .then(data => setThing(data));
     }, [id]);
@@ -25,7 +29,6 @@ export const ModifVideo = () => {
     if (!thing) {
         return <div>Chargement en cours...</div>;
     }
-
 
     return (
         <main>
@@ -41,12 +44,16 @@ export const ModifVideo = () => {
             
 
             <button type="submit" className="hover:bg-[#717D7E] rounded ml-3" onClick={() => {
+            //production
+            //`https://web-project-api.cluster-ig3.igpolytech.fr/thing/${id}`
+            //developpement
+            //`http://localhost:5000/thing/${id}`
             fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/thing/${id}`, {
             method: "DELETE",
             headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-              }
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token,
+              },
             })
             .then(response => {
             if (response.ok) {

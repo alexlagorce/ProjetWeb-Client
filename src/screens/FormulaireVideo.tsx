@@ -6,13 +6,20 @@ type FormInputs = {
 
 export const FormulaireVideo = () => {
 
+    const token = localStorage.getItem('token');
+
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
 
         try {
+          //production
+          //'https://web-project-api.cluster-ig3.igpolytech.fr/formulairevideo'
+          //developpement
+          //'http://localhost:5000/formulairevideo'
           const response = await fetch('https://web-project-api.cluster-ig3.igpolytech.fr/formulairevideo', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + token,
             },
             body: JSON.stringify(data),
           });

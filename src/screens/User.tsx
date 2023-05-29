@@ -9,7 +9,7 @@ export const User = () => {
         const token = localStorage.getItem('token');
         if (token) {
           // Effectuer une action pour se connecter automatiquement (par exemple, rediriger vers la page des commentaires)
-          window.location.href = '/commentaires';
+          window.location.href = '/client';
         }
       }, []); // Les crochets vides [] en tant que deuxième argument assurent que ce code ne s'exécute qu'une seule fois au chargement du composant
   
@@ -17,7 +17,7 @@ export const User = () => {
 
         <section>
 
-            <h3 className="text-3xl font-extrabold mb-10">Crée toi un compte pour pouvoir ajouter des commentaires !</h3>  
+            <h3 className="text-3xl font-extrabold mb-10">Crée toi un compte pour pouvoir ajouter des ressources !</h3>  
 
             <div className="mt-2 mb-5 flex">
 

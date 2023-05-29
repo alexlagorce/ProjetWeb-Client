@@ -15,7 +15,7 @@ export const Connexion = () => {
       //production
       //'https://web-project-api.cluster-ig3.igpolytech.fr/login'
       //developpement 
-      //http://localhost:5000/login
+      //'http://localhost:5000/login'
       try {
         const response = await fetch('https://web-project-api.cluster-ig3.igpolytech.fr/login', {
           method: 'POST',
@@ -29,7 +29,7 @@ export const Connexion = () => {
           //L'utilisateur obtient un token que l'on stocke dans localStorage
           const data = await response.json();
           localStorage.setItem('token', data.token);      
-          window.location.href = '/commentaires';
+          window.location.href = '/client';
         } else {
           console.log('Erreur lors de l\'envoi du message');
           setErrorMessage('Identifiant ou mot de passe incorrect, veuillez réessayer');

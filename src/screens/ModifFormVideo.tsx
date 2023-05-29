@@ -7,17 +7,20 @@ type FormInputs = {
   lienvideo: string;
 };
 
-const token = localStorage.getItem('token');
-
 export const ModificationFormulaire: React.FC = () => {
 
   const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormInputs>();
   const [thing, setThing] = useState(null);
   const { id } = useParams<{ id: string }>();
 
+  const token = localStorage.getItem('token');
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
+      //production
+      //`https://web-project-api.cluster-ig3.igpolytech.fr/modify-thing/${id}`
+      //developpement
+      //`http://localhost:5000/modify-thing/${id}`
       const response = await fetch(`https://web-project-api.cluster-ig3.igpolytech.fr/modify-thing/${id}`, {
         method: 'PUT',
         headers: {
@@ -41,6 +44,10 @@ export const ModificationFormulaire: React.FC = () => {
   useEffect(() => {
     const fetchThing = async () => {
       try {
+        //production
+        //`https://web-project-api.cluster-ig3.igpolytech.fr`
+        //developpement
+        //`http://localhost:5000`
         const response = await fetch(`https://web-project-api.cluster-ig3.igpolytech.fr`);
         if (response.ok) {
           const data = await response.json();

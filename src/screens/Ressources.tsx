@@ -2,6 +2,7 @@ import { RessourcesVideo } from "../components/RessourcesVideo"
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { RessourcesPhoto } from "../components/RessourcesPhoto";
+import { Commentaire } from "../components/Commentaire";
 
 interface Thing {
     _id: number;
@@ -24,7 +25,6 @@ export const Ressources = () => {
     //'https://web-project-api.cluster-ig3.igpolytech.fr/video'
     // pour récuperer tout mes objets vidéo
     useEffect(() => {
-        //adresse developpement
         fetch('https://web-project-api.cluster-ig3.igpolytech.fr/video')
           .then(response => response.json())
           .then(data => setThings(data));
@@ -76,6 +76,10 @@ export const Ressources = () => {
                 <Link to="/formulairephoto">
                     <button type="submit" className="bg-[#717D7E] py-3 px-3 rounded">Ajouter une photo</button>
                 </Link>
+            </div>
+
+            <div>
+                <Commentaire/>
             </div>
     
         </main>

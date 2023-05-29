@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Home } from './screens/Home';
 import { Ressources } from './screens/Ressources';
-import { Commentaire } from './screens/Commentaire';
+import { Client } from './screens/Client';
 import { FormulaireCommentaire } from './formulaire/Commentaire';
 import { Reseaux } from './screens/Reseaux';
 import { Routes, Route, NavLink } from 'react-router-dom';
@@ -28,7 +28,7 @@ function App() {
           <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/'>Accueil</NavLink><br></br>
           <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/reseaux'>About</NavLink><br></br>
           <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/ressources'>Ressources</NavLink><br></br>
-          <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/auth'>Commentaires</NavLink><br></br>
+          <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/auth'>Compte</NavLink><br></br>
           <NavLink className='mr-3 text-white hover:underline' style={({isActive}) => ({fontWeight: isActive? 'bold' : 'normal'})} to='/contact'>Contact</NavLink>
           </nav>
       </header>
@@ -36,7 +36,7 @@ function App() {
         <Route path='/' element={ <Home/> }/>
         <Route path='/ressources' element={ <Ressources/> }/>
         <Route path="/reseaux" element={ <Reseaux/> }/>
-        <Route path="/commentaires" element={ <Commentaire/> }/>
+        <Route path="/client" element={ <Client/> }/>
         <Route path="/formulairecommentaires" element={ <FormulaireCommentaire/> }/>
         <Route path='/contact' element={ <Contact/> }/>
         <Route path="/formulairevideo" element={ <FormulaireVideo/> }/>
